@@ -1,0 +1,527 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Geminate</title>
+<style>
+:root{--bg:#fcfcfb;--ink:#0b0b0b;--ink2:#52514e;--line:#dcdbd5}
+@media (prefers-color-scheme: dark){:root{--bg:#1a1a19;--ink:#ffffff;--ink2:#c3c2b7;--line:#3a3a37}}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px "Segoe UI",Arial,sans-serif}
+header{display:flex;flex-wrap:wrap;gap:12px;align-items:center;padding:10px 16px;border-bottom:1px solid var(--line)}
+header h1{font-size:17px;margin:0 12px 0 0}
+select,input{font:inherit;padding:4px 6px}
+#wrap{overflow:auto;padding:8px}
+#wrap svg{width:100%;height:auto;min-width:1100px;border-radius:8px}
+.sys{cursor:pointer}.sys.dim{opacity:.18}
+#tip{position:fixed;pointer-events:none;background:#0b0b0b;color:#fff;padding:8px 10px;border-radius:6px;font-size:12.5px;line-height:1.45;display:none;white-space:pre;z-index:9}
+#count{color:var(--ink2)}
+</style></head><body>
+<header><h1>Geminate</h1>
+<label>Hervorheben: <select id="f">
+<option value="">alle</option><option value="pa">nur mit Prospecting Array</option>
+<option value="Mexallon">Mexallon</option><option value="Isogen">Isogen</option><option value="Nocxium">Nocxium</option>
+<option value="Zydrine">Zydrine</option><option value="Megacyte">Megacyte</option>
+<option value="MAJ3">MAJ3</option><option value="MIN">mit MIN-Anteil</option></select></label>
+<label>System: <input id="q" placeholder="Name oder Konstellation" size="22"></label>
+<span id="count"></span></header>
+<div id="wrap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2367 1532" width="2367" height="1532" font-family="Segoe UI, Arial, Helvetica, sans-serif" class="sovmap">
+<rect width="2367" height="1532" fill="#fcfcfb"/>
+<g class="jumps">
+<line x1="627.0" y1="239.0" x2="777.0" y2="279.0" stroke="#7b5fb8" stroke-width="2" stroke-dasharray="6,4"/>
+<line x1="677.0" y1="159.0" x2="627.0" y2="239.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="567.0" y1="319.0" x2="627.0" y2="239.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="817.0" y1="159.0" x2="677.0" y2="159.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="417.0" y1="159.0" x2="677.0" y2="159.0" stroke="#c0504d" stroke-width="1.5"/>
+<line x1="707.0" y1="369.0" x2="567.0" y2="319.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="457.0" y1="459.0" x2="567.0" y2="319.0" stroke="#c0504d" stroke-width="1.5"/>
+<line x1="957.0" y1="159.0" x2="817.0" y2="159.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1107.0" y1="159.0" x2="957.0" y2="159.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="957.0" y1="489.0" x2="957.0" y2="159.0" stroke="#c0504d" stroke-width="1.5"/>
+<line x1="1297.0" y1="159.0" x2="1107.0" y2="159.0" stroke="#c0504d" stroke-width="1.5"/>
+<line x1="597.0" y1="499.0" x2="457.0" y2="459.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="147.0" y1="419.0" x2="457.0" y2="459.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="337.0" y1="529.0" x2="457.0" y2="459.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="737.0" y1="609.0" x2="597.0" y2="499.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="497.0" y1="609.0" x2="597.0" y2="499.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="737.0" y1="769.0" x2="737.0" y2="609.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="497.0" y1="769.0" x2="737.0" y2="609.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="497.0" y1="609.0" x2="737.0" y2="609.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="497.0" y1="769.0" x2="737.0" y2="769.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="497.0" y1="609.0" x2="737.0" y2="769.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="867.0" y1="1089.0" x2="737.0" y2="769.0" stroke="#c0504d" stroke-width="1.5"/>
+<line x1="497.0" y1="609.0" x2="497.0" y2="769.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="347.0" y1="729.0" x2="497.0" y2="769.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="297.0" y1="1039.0" x2="497.0" y2="769.0" stroke="#c0504d" stroke-width="1.5"/>
+<line x1="287.0" y1="629.0" x2="347.0" y2="729.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="337.0" y1="529.0" x2="287.0" y2="629.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="957.0" y1="589.0" x2="957.0" y2="489.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1137.0" y1="489.0" x2="957.0" y2="489.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1057.0" y1="679.0" x2="957.0" y2="589.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1057.0" y1="679.0" x2="1057.0" y2="769.0" stroke="#7b5fb8" stroke-width="2" stroke-dasharray="6,4"/>
+<line x1="907.0" y1="679.0" x2="1057.0" y2="679.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1137.0" y1="589.0" x2="1057.0" y2="679.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1137.0" y1="589.0" x2="1137.0" y2="489.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1297.0" y1="89.0" x2="1297.0" y2="159.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1427.0" y1="169.0" x2="1297.0" y2="159.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1437.0" y1="249.0" x2="1427.0" y2="169.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1557.0" y1="169.0" x2="1427.0" y2="169.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1567.0" y1="329.0" x2="1437.0" y2="249.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1557.0" y1="169.0" x2="1437.0" y2="249.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1557.0" y1="169.0" x2="1567.0" y2="329.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1457.0" y1="519.0" x2="1567.0" y2="329.0" stroke="#c0504d" stroke-width="1.5"/>
+<line x1="1697.0" y1="169.0" x2="1557.0" y2="169.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1867.0" y1="209.0" x2="1697.0" y2="169.0" stroke="#c0504d" stroke-width="1.5"/>
+<line x1="277.0" y1="109.0" x2="417.0" y2="159.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="287.0" y1="209.0" x2="417.0" y2="159.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="147.0" y1="159.0" x2="277.0" y2="109.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="147.0" y1="159.0" x2="287.0" y2="209.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="287.0" y1="299.0" x2="287.0" y2="209.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="147.0" y1="259.0" x2="147.0" y2="159.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1597.0" y1="519.0" x2="1457.0" y2="519.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1357.0" y1="689.0" x2="1457.0" y2="519.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1527.0" y1="619.0" x2="1457.0" y2="519.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1597.0" y1="689.0" x2="1597.0" y2="519.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1527.0" y1="619.0" x2="1597.0" y2="519.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1727.0" y1="619.0" x2="1597.0" y2="519.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1597.0" y1="689.0" x2="1357.0" y2="689.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1527.0" y1="619.0" x2="1357.0" y2="689.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1517.0" y1="849.0" x2="1357.0" y2="689.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1317.0" y1="809.0" x2="1357.0" y2="689.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1517.0" y1="759.0" x2="1597.0" y2="689.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1727.0" y1="619.0" x2="1527.0" y2="619.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1677.0" y1="769.0" x2="1727.0" y2="619.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1677.0" y1="769.0" x2="1517.0" y2="849.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1317.0" y1="809.0" x2="1517.0" y2="849.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1577.0" y1="1059.0" x2="1517.0" y2="849.0" stroke="#c0504d" stroke-width="1.5"/>
+<line x1="1137.0" y1="979.0" x2="1317.0" y2="809.0" stroke="#c0504d" stroke-width="1.5"/>
+<line x1="1797.0" y1="309.0" x2="1867.0" y2="209.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1957.0" y1="279.0" x2="1867.0" y2="209.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1877.0" y1="379.0" x2="1797.0" y2="309.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1957.0" y1="279.0" x2="1877.0" y2="379.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1957.0" y1="279.0" x2="1997.0" y2="119.0" stroke="#7b5fb8" stroke-width="2" stroke-dasharray="6,4"/>
+<line x1="2007.0" y1="399.0" x2="1957.0" y2="279.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="2027.0" y1="509.0" x2="2007.0" y2="399.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1987.0" y1="649.0" x2="2027.0" y2="509.0" stroke="#7b5fb8" stroke-width="2" stroke-dasharray="6,4"/>
+<line x1="297.0" y1="1179.0" x2="297.0" y2="1039.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="147.0" y1="1109.0" x2="297.0" y2="1039.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="437.0" y1="1039.0" x2="297.0" y2="1039.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="147.0" y1="1109.0" x2="297.0" y2="1179.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="437.0" y1="1179.0" x2="297.0" y2="1179.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="297.0" y1="1319.0" x2="297.0" y2="1179.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="147.0" y1="1109.0" x2="127.0" y2="969.0" stroke="#7b5fb8" stroke-width="2" stroke-dasharray="6,4"/>
+<line x1="437.0" y1="1319.0" x2="437.0" y2="1179.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="437.0" y1="1039.0" x2="437.0" y2="1179.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="567.0" y1="1179.0" x2="437.0" y2="1179.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="297.0" y1="1319.0" x2="437.0" y2="1319.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="567.0" y1="1179.0" x2="437.0" y2="1319.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="567.0" y1="1179.0" x2="437.0" y2="1039.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="617.0" y1="969.0" x2="437.0" y2="1039.0" stroke="#7b5fb8" stroke-width="2" stroke-dasharray="6,4"/>
+<line x1="297.0" y1="1319.0" x2="137.0" y2="1449.0" stroke="#7b5fb8" stroke-width="2" stroke-dasharray="6,4"/>
+<line x1="1527.0" y1="1199.0" x2="1577.0" y2="1059.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1397.0" y1="1109.0" x2="1577.0" y2="1059.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1657.0" y1="1159.0" x2="1577.0" y2="1059.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1727.0" y1="989.0" x2="1577.0" y2="1059.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1537.0" y1="1349.0" x2="1527.0" y2="1199.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1537.0" y1="1479.0" x2="1537.0" y2="1349.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1327.0" y1="1219.0" x2="1397.0" y2="1109.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1647.0" y1="1409.0" x2="1537.0" y2="1479.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1407.0" y1="1429.0" x2="1537.0" y2="1479.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1327.0" y1="1329.0" x2="1327.0" y2="1219.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1677.0" y1="1289.0" x2="1647.0" y2="1409.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1657.0" y1="1159.0" x2="1677.0" y2="1289.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1657.0" y1="1159.0" x2="1817.0" y2="1089.0" stroke="#7b5fb8" stroke-width="2" stroke-dasharray="6,4"/>
+<line x1="1407.0" y1="1429.0" x2="1327.0" y2="1329.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="717.0" y1="1139.0" x2="867.0" y2="1089.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="867.0" y1="1209.0" x2="867.0" y2="1089.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="717.0" y1="1249.0" x2="717.0" y2="1139.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="757.0" y1="1349.0" x2="867.0" y2="1209.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="977.0" y1="1349.0" x2="867.0" y2="1209.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="977.0" y1="1349.0" x2="757.0" y2="1349.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1277.0" y1="979.0" x2="1137.0" y2="979.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1137.0" y1="1069.0" x2="1137.0" y2="979.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1137.0" y1="1159.0" x2="1137.0" y2="1069.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1137.0" y1="1249.0" x2="1137.0" y2="1159.0" stroke="#8a8984" stroke-width="1.5"/>
+<line x1="1137.0" y1="1339.0" x2="1137.0" y2="1249.0" stroke="#8a8984" stroke-width="1.5"/>
+</g><g class="systems">
+<a href="https://evemaps.dotlan.net/system/0-GZX9" target="_blank"><g class="sys" data-name="0-GZX9" data-const="ZYL-FT" data-sec="-0.30" data-owner="Fraternity." data-tda="MAJ1" data-pa="N/A" data-min=""><title>0-GZX9 (ZYL-FT) sec -0.30
+Sov: Fraternity.
+Threat Detection: MAJ1
+Prospecting: N/A</title><rect x="97.0" y="136.0" width="100" height="46" rx="7" fill="#86b6ef" stroke="#ffffff" stroke-width="2"/><rect x="104.0" y="138.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="147.0" y="153.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#0b0b0b">0-GZX9</text><text x="147.0" y="165.0" font-size="10" text-anchor="middle" fill="#0b0b0b">-0.30 · MAJ1</text></g></a>
+<a href="https://evemaps.dotlan.net/system/2H-TSE" target="_blank"><g class="sys" data-name="2H-TSE" data-const="ZYL-FT" data-sec="-0.29" data-owner="Fraternity." data-tda="MAJ1" data-pa="N/A" data-min=""><title>2H-TSE (ZYL-FT) sec -0.29
+Sov: Fraternity.
+Threat Detection: MAJ1
+Prospecting: N/A</title><rect x="97.0" y="236.0" width="100" height="46" rx="7" fill="#86b6ef" stroke="#ffffff" stroke-width="2"/><rect x="104.0" y="238.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="147.0" y="253.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#0b0b0b">2H-TSE</text><text x="147.0" y="265.0" font-size="10" text-anchor="middle" fill="#0b0b0b">-0.29 · MAJ1</text></g></a>
+<a href="https://evemaps.dotlan.net/system/QKTR-L" target="_blank"><g class="sys" data-name="QKTR-L" data-const="UBPU-9" data-sec="-0.39" data-owner="Fraternity." data-tda="MAJ3" data-pa="N/A" data-min=""><title>QKTR-L (UBPU-9) sec -0.39
+Sov: Fraternity.
+Threat Detection: MAJ3
+Prospecting: N/A</title><rect x="97.0" y="396.0" width="100" height="46" rx="7" fill="#0d366b" stroke="#ffffff" stroke-width="2"/><rect x="104.0" y="398.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="147.0" y="413.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#ffffff">QKTR-L</text><text x="147.0" y="425.0" font-size="10" text-anchor="middle" fill="#ffffff">-0.39 · MAJ3</text></g></a>
+<a href="https://evemaps.dotlan.net/system/EOA-ZC" target="_blank"><g class="sys" data-name="EOA-ZC" data-const="F-ZNNG" data-sec="-0.07" data-owner="Fraternity." data-tda="MAJ2+MIN2" data-pa="N/A" data-min=""><title>EOA-ZC (F-ZNNG) sec -0.07
+Sov: Fraternity.
+Threat Detection: MAJ2+MIN2
+Prospecting: N/A</title><rect x="97.0" y="1086.0" width="100" height="46" rx="7" fill="#2a78d6" stroke="#ffffff" stroke-width="2"/><rect x="104.0" y="1088.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="147.0" y="1103.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#ffffff">EOA-ZC</text><text x="147.0" y="1115.0" font-size="10" text-anchor="middle" fill="#ffffff">-0.07 · MAJ2 + MIN2</text></g></a>
+<a href="https://evemaps.dotlan.net/system/KR-V6G" target="_blank"><g class="sys" data-name="KR-V6G" data-const="ZYL-FT" data-sec="-0.20" data-owner="Fraternity." data-tda="MAJ1" data-pa="N/A" data-min=""><title>KR-V6G (ZYL-FT) sec -0.20
+Sov: Fraternity.
+Threat Detection: MAJ1
+Prospecting: N/A</title><rect x="227.0" y="86.0" width="100" height="46" rx="7" fill="#86b6ef" stroke="#ffffff" stroke-width="2"/><rect x="234.0" y="88.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="277.0" y="103.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#0b0b0b">KR-V6G</text><text x="277.0" y="115.0" font-size="10" text-anchor="middle" fill="#0b0b0b">-0.20 · MAJ1</text></g></a>
+<a href="https://evemaps.dotlan.net/system/AP9-LV" target="_blank"><g class="sys" data-name="AP9-LV" data-const="ZYL-FT" data-sec="-0.25" data-owner="Fraternity." data-tda="MAJ1" data-pa="N/A" data-min=""><title>AP9-LV (ZYL-FT) sec -0.25
+Sov: Fraternity.
+Threat Detection: MAJ1
+Prospecting: N/A</title><rect x="237.0" y="186.0" width="100" height="46" rx="7" fill="#86b6ef" stroke="#ffffff" stroke-width="2"/><rect x="244.0" y="188.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="287.0" y="203.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#0b0b0b">AP9-LV</text><text x="287.0" y="215.0" font-size="10" text-anchor="middle" fill="#0b0b0b">-0.25 · MAJ1</text></g></a>
+<a href="https://evemaps.dotlan.net/system/4NGK-F" target="_blank"><g class="sys" data-name="4NGK-F" data-const="ZYL-FT" data-sec="-0.23" data-owner="Fraternity." data-tda="MAJ1" data-pa="N/A" data-min=""><title>4NGK-F (ZYL-FT) sec -0.23
+Sov: Fraternity.
+Threat Detection: MAJ1
+Prospecting: N/A</title><rect x="237.0" y="276.0" width="100" height="46" rx="7" fill="#86b6ef" stroke="#ffffff" stroke-width="2"/><rect x="244.0" y="278.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="287.0" y="293.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#0b0b0b">4NGK-F</text><text x="287.0" y="305.0" font-size="10" text-anchor="middle" fill="#0b0b0b">-0.23 · MAJ1</text></g></a>
+<a href="https://evemaps.dotlan.net/system/B6-52M" target="_blank"><g class="sys" data-name="B6-52M" data-const="UBPU-9" data-sec="-0.09" data-owner="Fraternity." data-tda="MAJ2+MIN2" data-pa="N/A" data-min=""><title>B6-52M (UBPU-9) sec -0.09
+Sov: Fraternity.
+Threat Detection: MAJ2+MIN2
+Prospecting: N/A</title><rect x="237.0" y="606.0" width="100" height="46" rx="7" fill="#2a78d6" stroke="#ffffff" stroke-width="2"/><rect x="244.0" y="608.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="287.0" y="623.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#ffffff">B6-52M</text><text x="287.0" y="635.0" font-size="10" text-anchor="middle" fill="#ffffff">-0.09 · MAJ2 + MIN2</text></g></a>
+<a href="https://evemaps.dotlan.net/system/UBX-CC" target="_blank"><g class="sys" data-name="UBX-CC" data-const="F-ZNNG" data-sec="-0.06" data-owner="Fraternity." data-tda="MAJ2+MIN2" data-pa="N/A" data-min=""><title>UBX-CC (F-ZNNG) sec -0.06
+Sov: Fraternity.
+Threat Detection: MAJ2+MIN2
+Prospecting: N/A</title><rect x="247.0" y="1016.0" width="100" height="46" rx="7" fill="#2a78d6" stroke="#ffffff" stroke-width="2"/><rect x="254.0" y="1018.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="297.0" y="1033.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#ffffff">UBX-CC</text><text x="297.0" y="1045.0" font-size="10" text-anchor="middle" fill="#ffffff">-0.06 · MAJ2 + MIN2</text></g></a>
+<a href="https://evemaps.dotlan.net/system/TJM-JJ" target="_blank"><g class="sys" data-name="TJM-JJ" data-const="F-ZNNG" data-sec="-0.05" data-owner="Fraternity." data-tda="MAJ2+MIN2" data-pa="N/A" data-min=""><title>TJM-JJ (F-ZNNG) sec -0.05
+Sov: Fraternity.
+Threat Detection: MAJ2+MIN2
+Prospecting: N/A</title><rect x="247.0" y="1156.0" width="100" height="46" rx="7" fill="#2a78d6" stroke="#ffffff" stroke-width="2"/><rect x="254.0" y="1158.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="297.0" y="1173.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#ffffff">TJM-JJ</text><text x="297.0" y="1185.0" font-size="10" text-anchor="middle" fill="#ffffff">-0.05 · MAJ2 + MIN2</text></g></a>
+<a href="https://evemaps.dotlan.net/system/QP0K-B" target="_blank"><g class="sys" data-name="QP0K-B" data-const="F-ZNNG" data-sec="-0.03" data-owner="Fraternity." data-tda="MAJ2+MIN2" data-pa="N/A" data-min=""><title>QP0K-B (F-ZNNG) sec -0.03
+Sov: Fraternity.
+Threat Detection: MAJ2+MIN2
+Prospecting: N/A</title><rect x="247.0" y="1296.0" width="100" height="46" rx="7" fill="#2a78d6" stroke="#ffffff" stroke-width="2"/><rect x="254.0" y="1298.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="297.0" y="1313.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#ffffff">QP0K-B</text><text x="297.0" y="1325.0" font-size="10" text-anchor="middle" fill="#ffffff">-0.03 · MAJ2 + MIN2</text></g></a>
+<a href="https://evemaps.dotlan.net/system/V-MZW0" target="_blank"><g class="sys" data-name="V-MZW0" data-const="UBPU-9" data-sec="-0.09" data-owner="Fraternity." data-tda="MAJ2" data-pa="N/A" data-min=""><title>V-MZW0 (UBPU-9) sec -0.09
+Sov: Fraternity.
+Threat Detection: MAJ2
+Prospecting: N/A</title><rect x="287.0" y="506.0" width="100" height="46" rx="7" fill="#2a78d6" stroke="#ffffff" stroke-width="2"/><rect x="294.0" y="508.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="337.0" y="523.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#ffffff">V-MZW0</text><text x="337.0" y="535.0" font-size="10" text-anchor="middle" fill="#ffffff">-0.09 · MAJ2</text></g></a>
+<a href="https://evemaps.dotlan.net/system/L4X-FH" target="_blank"><g class="sys" data-name="L4X-FH" data-const="UBPU-9" data-sec="-0.08" data-owner="Fraternity." data-tda="MAJ2+MIN2" data-pa="N/A" data-min=""><title>L4X-FH (UBPU-9) sec -0.08
+Sov: Fraternity.
+Threat Detection: MAJ2+MIN2
+Prospecting: N/A</title><rect x="297.0" y="706.0" width="100" height="46" rx="7" fill="#2a78d6" stroke="#ffffff" stroke-width="2"/><rect x="304.0" y="708.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="347.0" y="723.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#ffffff">L4X-FH</text><text x="347.0" y="735.0" font-size="10" text-anchor="middle" fill="#ffffff">-0.08 · MAJ2 + MIN2</text></g></a>
+<a href="https://evemaps.dotlan.net/system/NQ-9IH" target="_blank"><g class="sys" data-name="NQ-9IH" data-const="ZYL-FT" data-sec="-0.21" data-owner="Fraternity." data-tda="MAJ1" data-pa="N/A" data-min=""><title>NQ-9IH (ZYL-FT) sec -0.21
+Sov: Fraternity.
+Threat Detection: MAJ1
+Prospecting: N/A</title><rect x="367.0" y="136.0" width="100" height="46" rx="7" fill="#86b6ef" stroke="#ffffff" stroke-width="2"/><rect x="374.0" y="138.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="417.0" y="153.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#0b0b0b">NQ-9IH</text><text x="417.0" y="165.0" font-size="10" text-anchor="middle" fill="#0b0b0b">-0.21 · MAJ1</text></g></a>
+<a href="https://evemaps.dotlan.net/system/AD-5B8" target="_blank"><g class="sys" data-name="AD-5B8" data-const="F-ZNNG" data-sec="-0.03" data-owner="Fraternity." data-tda="MAJ2+MIN2" data-pa="N/A" data-min=""><title>AD-5B8 (F-ZNNG) sec -0.03
+Sov: Fraternity.
+Threat Detection: MAJ2+MIN2
+Prospecting: N/A</title><rect x="387.0" y="1016.0" width="100" height="46" rx="7" fill="#2a78d6" stroke="#ffffff" stroke-width="2"/><rect x="394.0" y="1018.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="437.0" y="1033.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#ffffff">AD-5B8</text><text x="437.0" y="1045.0" font-size="10" text-anchor="middle" fill="#ffffff">-0.03 · MAJ2 + MIN2</text></g></a>
+<a href="https://evemaps.dotlan.net/system/G-73MR" target="_blank"><g class="sys" data-name="G-73MR" data-const="F-ZNNG" data-sec="-0.03" data-owner="Fraternity." data-tda="MAJ2" data-pa="N/A" data-min=""><title>G-73MR (F-ZNNG) sec -0.03
+Sov: Fraternity.
+Threat Detection: MAJ2
+Prospecting: N/A</title><rect x="387.0" y="1156.0" width="100" height="46" rx="7" fill="#2a78d6" stroke="#ffffff" stroke-width="2"/><rect x="394.0" y="1158.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="437.0" y="1173.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#ffffff">G-73MR</text><text x="437.0" y="1185.0" font-size="10" text-anchor="middle" fill="#ffffff">-0.03 · MAJ2</text></g></a>
+<a href="https://evemaps.dotlan.net/system/E-91FV" target="_blank"><g class="sys" data-name="E-91FV" data-const="F-ZNNG" data-sec="-0.02" data-owner="Fraternity." data-tda="MAJ2+MIN2" data-pa="N/A" data-min=""><title>E-91FV (F-ZNNG) sec -0.02
+Sov: Fraternity.
+Threat Detection: MAJ2+MIN2
+Prospecting: N/A</title><rect x="387.0" y="1296.0" width="100" height="46" rx="7" fill="#2a78d6" stroke="#ffffff" stroke-width="2"/><rect x="394.0" y="1298.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="437.0" y="1313.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#ffffff">E-91FV</text><text x="437.0" y="1325.0" font-size="10" text-anchor="middle" fill="#ffffff">-0.02 · MAJ2 + MIN2</text></g></a>
+<a href="https://evemaps.dotlan.net/system/M-MD31" target="_blank"><g class="sys" data-name="M-MD31" data-const="UBPU-9" data-sec="-0.27" data-owner="Fraternity." data-tda="MAJ2" data-pa="N/A" data-min=""><title>M-MD31 (UBPU-9) sec -0.27
+Sov: Fraternity.
+Threat Detection: MAJ2
+Prospecting: N/A</title><rect x="407.0" y="436.0" width="100" height="46" rx="7" fill="#2a78d6" stroke="#ffffff" stroke-width="2"/><rect x="414.0" y="438.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="457.0" y="453.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#ffffff">M-MD31</text><text x="457.0" y="465.0" font-size="10" text-anchor="middle" fill="#ffffff">-0.27 · MAJ2</text></g></a>
+<a href="https://evemaps.dotlan.net/system/L-HV5C" target="_blank"><g class="sys" data-name="L-HV5C" data-const="UBPU-9" data-sec="-0.05" data-owner="Fraternity." data-tda="MAJ2+MIN2" data-pa="N/A" data-min=""><title>L-HV5C (UBPU-9) sec -0.05
+Sov: Fraternity.
+Threat Detection: MAJ2+MIN2
+Prospecting: N/A</title><rect x="447.0" y="586.0" width="100" height="46" rx="7" fill="#2a78d6" stroke="#ffffff" stroke-width="2"/><rect x="454.0" y="588.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="497.0" y="603.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#ffffff">L-HV5C</text><text x="497.0" y="615.0" font-size="10" text-anchor="middle" fill="#ffffff">-0.05 · MAJ2 + MIN2</text></g></a>
+<a href="https://evemaps.dotlan.net/system/NBPH-N" target="_blank"><g class="sys" data-name="NBPH-N" data-const="UBPU-9" data-sec="-0.07" data-owner="Fraternity." data-tda="MAJ2" data-pa="N/A" data-min=""><title>NBPH-N (UBPU-9) sec -0.07
+Sov: Fraternity.
+Threat Detection: MAJ2
+Prospecting: N/A</title><rect x="447.0" y="746.0" width="100" height="46" rx="7" fill="#2a78d6" stroke="#ffffff" stroke-width="2"/><rect x="454.0" y="748.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="497.0" y="763.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#ffffff">NBPH-N</text><text x="497.0" y="775.0" font-size="10" text-anchor="middle" fill="#ffffff">-0.07 · MAJ2</text></g></a>
+<a href="https://evemaps.dotlan.net/system/FDZ4-A" target="_blank"><g class="sys" data-name="FDZ4-A" data-const="N-K4Q0" data-sec="-0.23" data-owner="The Society of Conscious Thought" data-tda="" data-pa="N/A" data-min=""><title>FDZ4-A (N-K4Q0) sec -0.23
+Sov: The Society of Conscious Thought
+Threat Detection: -
+Prospecting: N/A</title><rect x="517.0" y="296.0" width="100" height="46" rx="7" fill="#cfcfcb" stroke="#c0504d" stroke-width="2" stroke-dasharray="5,3"/><rect x="524.0" y="298.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="567.0" y="313.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#0b0b0b">FDZ4-A</text><text x="567.0" y="325.0" font-size="10" text-anchor="middle" fill="#0b0b0b">-0.23 · The Societ…</text></g></a>
+<a href="https://evemaps.dotlan.net/system/54-MF6" target="_blank"><g class="sys" data-name="54-MF6" data-const="F-ZNNG" data-sec="-0.02" data-owner="Fraternity." data-tda="MAJ2+MIN2" data-pa="N/A" data-min=""><title>54-MF6 (F-ZNNG) sec -0.02
+Sov: Fraternity.
+Threat Detection: MAJ2+MIN2
+Prospecting: N/A</title><rect x="517.0" y="1156.0" width="100" height="46" rx="7" fill="#2a78d6" stroke="#ffffff" stroke-width="2"/><rect x="524.0" y="1158.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="567.0" y="1173.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#ffffff">54-MF6</text><text x="567.0" y="1185.0" font-size="10" text-anchor="middle" fill="#ffffff">-0.02 · MAJ2 + MIN2</text></g></a>
+<a href="https://evemaps.dotlan.net/system/WH-2EZ" target="_blank"><g class="sys" data-name="WH-2EZ" data-const="UBPU-9" data-sec="-0.17" data-owner="Fraternity." data-tda="MAJ2+MIN2" data-pa="N/A" data-min=""><title>WH-2EZ (UBPU-9) sec -0.17
+Sov: Fraternity.
+Threat Detection: MAJ2+MIN2
+Prospecting: N/A</title><rect x="547.0" y="476.0" width="100" height="46" rx="7" fill="#2a78d6" stroke="#ffffff" stroke-width="2"/><rect x="554.0" y="478.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="597.0" y="493.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#ffffff">WH-2EZ</text><text x="597.0" y="505.0" font-size="10" text-anchor="middle" fill="#ffffff">-0.17 · MAJ2 + MIN2</text></g></a>
+<a href="https://evemaps.dotlan.net/system/MR4-MY" target="_blank"><g class="sys" data-name="MR4-MY" data-const="N-K4Q0" data-sec="-0.20" data-owner="The Society of Conscious Thought" data-tda="" data-pa="N/A" data-min=""><title>MR4-MY (N-K4Q0) sec -0.20
+Sov: The Society of Conscious Thought
+Threat Detection: -
+Prospecting: N/A</title><rect x="577.0" y="216.0" width="100" height="46" rx="7" fill="#cfcfcb" stroke="#c0504d" stroke-width="2" stroke-dasharray="5,3"/><rect x="584.0" y="218.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="627.0" y="233.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#0b0b0b">MR4-MY</text><text x="627.0" y="245.0" font-size="10" text-anchor="middle" fill="#0b0b0b">-0.20 · The Societ…</text></g></a>
+<a href="https://evemaps.dotlan.net/system/SR-KBB" target="_blank"><g class="sys" data-name="SR-KBB" data-const="N-K4Q0" data-sec="-0.29" data-owner="The Society of Conscious Thought" data-tda="" data-pa="N/A" data-min=""><title>SR-KBB (N-K4Q0) sec -0.29
+Sov: The Society of Conscious Thought
+Threat Detection: -
+Prospecting: N/A</title><rect x="627.0" y="136.0" width="100" height="46" rx="7" fill="#cfcfcb" stroke="#c0504d" stroke-width="2" stroke-dasharray="5,3"/><rect x="634.0" y="138.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="677.0" y="153.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#0b0b0b">SR-KBB</text><text x="677.0" y="165.0" font-size="10" text-anchor="middle" fill="#0b0b0b">-0.29 · The Societ…</text></g></a>
+<a href="https://evemaps.dotlan.net/system/Roua" target="_blank"><g class="sys" data-name="Roua" data-const="N-K4Q0" data-sec="-0.21" data-owner="The Society of Conscious Thought" data-tda="" data-pa="N/A" data-min=""><title>Roua (N-K4Q0) sec -0.21
+Sov: The Society of Conscious Thought
+Threat Detection: -
+Prospecting: N/A</title><rect x="657.0" y="346.0" width="100" height="46" rx="7" fill="#cfcfcb" stroke="#c0504d" stroke-width="2" stroke-dasharray="5,3"/><rect x="664.0" y="348.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="707.0" y="363.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#0b0b0b">Roua</text><text x="707.0" y="375.0" font-size="10" text-anchor="middle" fill="#0b0b0b">-0.21 · The Societ…</text></g></a>
+<a href="https://evemaps.dotlan.net/system/TZL-WT" target="_blank"><g class="sys" data-name="TZL-WT" data-const="RJ-1R7" data-sec="-0.16" data-owner="Fraternity." data-tda="MAJ2+MIN2" data-pa="N/A" data-min=""><title>TZL-WT (RJ-1R7) sec -0.16
+Sov: Fraternity.
+Threat Detection: MAJ2+MIN2
+Prospecting: N/A</title><rect x="667.0" y="1116.0" width="100" height="46" rx="7" fill="#2a78d6" stroke="#ffffff" stroke-width="2"/><rect x="674.0" y="1118.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="717.0" y="1133.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#ffffff">TZL-WT</text><text x="717.0" y="1145.0" font-size="10" text-anchor="middle" fill="#ffffff">-0.16 · MAJ2 + MIN2</text></g></a>
+<a href="https://evemaps.dotlan.net/system/4K0N-J" target="_blank"><g class="sys" data-name="4K0N-J" data-const="RJ-1R7" data-sec="-0.13" data-owner="Fraternity." data-tda="MAJ2+MIN2" data-pa="N/A" data-min=""><title>4K0N-J (RJ-1R7) sec -0.13
+Sov: Fraternity.
+Threat Detection: MAJ2+MIN2
+Prospecting: N/A</title><rect x="667.0" y="1226.0" width="100" height="46" rx="7" fill="#2a78d6" stroke="#ffffff" stroke-width="2"/><rect x="674.0" y="1228.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="717.0" y="1243.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#ffffff">4K0N-J</text><text x="717.0" y="1255.0" font-size="10" text-anchor="middle" fill="#ffffff">-0.13 · MAJ2 + MIN2</text></g></a>
+<a href="https://evemaps.dotlan.net/system/D0-F4W" target="_blank"><g class="sys" data-name="D0-F4W" data-const="UBPU-9" data-sec="-0.05" data-owner="Fraternity." data-tda="MAJ2" data-pa="N/A" data-min=""><title>D0-F4W (UBPU-9) sec -0.05
+Sov: Fraternity.
+Threat Detection: MAJ2
+Prospecting: N/A</title><rect x="687.0" y="586.0" width="100" height="46" rx="7" fill="#2a78d6" stroke="#ffffff" stroke-width="2"/><rect x="694.0" y="588.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="737.0" y="603.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#ffffff">D0-F4W</text><text x="737.0" y="615.0" font-size="10" text-anchor="middle" fill="#ffffff">-0.05 · MAJ2</text></g></a>
+<a href="https://evemaps.dotlan.net/system/YN3-E3" target="_blank"><g class="sys" data-name="YN3-E3" data-const="UBPU-9" data-sec="-0.07" data-owner="Fraternity." data-tda="MAJ2+MIN2" data-pa="N/A" data-min=""><title>YN3-E3 (UBPU-9) sec -0.07
+Sov: Fraternity.
+Threat Detection: MAJ2+MIN2
+Prospecting: N/A</title><rect x="687.0" y="746.0" width="100" height="46" rx="7" fill="#2a78d6" stroke="#ffffff" stroke-width="2"/><rect x="694.0" y="748.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="737.0" y="763.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#ffffff">YN3-E3</text><text x="737.0" y="775.0" font-size="10" text-anchor="middle" fill="#ffffff">-0.07 · MAJ2 + MIN2</text></g></a>
+<a href="https://evemaps.dotlan.net/system/W-3BSU" target="_blank"><g class="sys" data-name="W-3BSU" data-const="RJ-1R7" data-sec="-0.09" data-owner="Fraternity." data-tda="MAJ2" data-pa="N/A" data-min=""><title>W-3BSU (RJ-1R7) sec -0.09
+Sov: Fraternity.
+Threat Detection: MAJ2
+Prospecting: N/A</title><rect x="707.0" y="1326.0" width="100" height="46" rx="7" fill="#2a78d6" stroke="#ffffff" stroke-width="2"/><rect x="714.0" y="1328.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="757.0" y="1343.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#ffffff">W-3BSU</text><text x="757.0" y="1355.0" font-size="10" text-anchor="middle" fill="#ffffff">-0.09 · MAJ2</text></g></a>
+<a href="https://evemaps.dotlan.net/system/2E-ZR5" target="_blank"><g class="sys" data-name="2E-ZR5" data-const="N-K4Q0" data-sec="-0.31" data-owner="The Society of Conscious Thought" data-tda="" data-pa="N/A" data-min=""><title>2E-ZR5 (N-K4Q0) sec -0.31
+Sov: The Society of Conscious Thought
+Threat Detection: -
+Prospecting: N/A</title><rect x="767.0" y="136.0" width="100" height="46" rx="7" fill="#cfcfcb" stroke="#c0504d" stroke-width="2" stroke-dasharray="5,3"/><rect x="774.0" y="138.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="817.0" y="153.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#0b0b0b">2E-ZR5</text><text x="817.0" y="165.0" font-size="10" text-anchor="middle" fill="#0b0b0b">-0.31 · The Societ…</text></g></a>
+<a href="https://evemaps.dotlan.net/system/LR-2XT" target="_blank"><g class="sys" data-name="LR-2XT" data-const="RJ-1R7" data-sec="-0.12" data-owner="Fraternity." data-tda="MAJ2+MIN2" data-pa="N/A" data-min=""><title>LR-2XT (RJ-1R7) sec -0.12
+Sov: Fraternity.
+Threat Detection: MAJ2+MIN2
+Prospecting: N/A</title><rect x="817.0" y="1066.0" width="100" height="46" rx="7" fill="#2a78d6" stroke="#ffffff" stroke-width="2"/><rect x="824.0" y="1068.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="867.0" y="1083.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#ffffff">LR-2XT</text><text x="867.0" y="1095.0" font-size="10" text-anchor="middle" fill="#ffffff">-0.12 · MAJ2 + MIN2</text></g></a>
+<a href="https://evemaps.dotlan.net/system/B-F1MI" target="_blank"><g class="sys" data-name="B-F1MI" data-const="RJ-1R7" data-sec="-0.09" data-owner="Fraternity." data-tda="MAJ2+MIN2" data-pa="N/A" data-min=""><title>B-F1MI (RJ-1R7) sec -0.09
+Sov: Fraternity.
+Threat Detection: MAJ2+MIN2
+Prospecting: N/A</title><rect x="817.0" y="1186.0" width="100" height="46" rx="7" fill="#2a78d6" stroke="#ffffff" stroke-width="2"/><rect x="824.0" y="1188.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="867.0" y="1203.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#ffffff">B-F1MI</text><text x="867.0" y="1215.0" font-size="10" text-anchor="middle" fill="#ffffff">-0.09 · MAJ2 + MIN2</text></g></a>
+<a href="https://evemaps.dotlan.net/system/8MG-J6" target="_blank"><g class="sys" data-name="8MG-J6" data-const="IPS-QB" data-sec="-0.60" data-owner="Fraternity." data-tda="MAJ3+MIN3" data-pa="N/A" data-min=""><title>8MG-J6 (IPS-QB) sec -0.60
+Sov: Fraternity.
+Threat Detection: MAJ3+MIN3
+Prospecting: N/A</title><rect x="857.0" y="656.0" width="100" height="46" rx="7" fill="#0d366b" stroke="#ffffff" stroke-width="2"/><rect x="864.0" y="658.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="907.0" y="673.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#ffffff">8MG-J6</text><text x="907.0" y="685.0" font-size="10" text-anchor="middle" fill="#ffffff">-0.60 · MAJ3 + MIN3</text></g></a>
+<a href="https://evemaps.dotlan.net/system/O1-FTD" target="_blank"><g class="sys" data-name="O1-FTD" data-const="N-K4Q0" data-sec="-0.41" data-owner="The Society of Conscious Thought" data-tda="" data-pa="N/A" data-min=""><title>O1-FTD (N-K4Q0) sec -0.41
+Sov: The Society of Conscious Thought
+Threat Detection: -
+Prospecting: N/A</title><rect x="907.0" y="136.0" width="100" height="46" rx="7" fill="#cfcfcb" stroke="#c0504d" stroke-width="2" stroke-dasharray="5,3"/><rect x="914.0" y="138.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="957.0" y="153.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#0b0b0b">O1-FTD</text><text x="957.0" y="165.0" font-size="10" text-anchor="middle" fill="#0b0b0b">-0.41 · The Societ…</text></g></a>
+<a href="https://evemaps.dotlan.net/system/BND-16" target="_blank"><g class="sys" data-name="BND-16" data-const="IPS-QB" data-sec="-0.49" data-owner="Fraternity." data-tda="MAJ2" data-pa="N/A" data-min=""><title>BND-16 (IPS-QB) sec -0.49
+Sov: Fraternity.
+Threat Detection: MAJ2
+Prospecting: N/A</title><rect x="907.0" y="466.0" width="100" height="46" rx="7" fill="#2a78d6" stroke="#ffffff" stroke-width="2"/><rect x="914.0" y="468.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="957.0" y="483.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#ffffff">BND-16</text><text x="957.0" y="495.0" font-size="10" text-anchor="middle" fill="#ffffff">-0.49 · MAJ2</text></g></a>
+<a href="https://evemaps.dotlan.net/system/IOO-7O" target="_blank"><g class="sys" data-name="IOO-7O" data-const="IPS-QB" data-sec="-0.53" data-owner="Fraternity." data-tda="MAJ2" data-pa="N/A" data-min=""><title>IOO-7O (IPS-QB) sec -0.53
+Sov: Fraternity.
+Threat Detection: MAJ2
+Prospecting: N/A</title><rect x="907.0" y="566.0" width="100" height="46" rx="7" fill="#2a78d6" stroke="#ffffff" stroke-width="2"/><rect x="914.0" y="568.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="957.0" y="583.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#ffffff">IOO-7O</text><text x="957.0" y="595.0" font-size="10" text-anchor="middle" fill="#ffffff">-0.53 · MAJ2</text></g></a>
+<a href="https://evemaps.dotlan.net/system/BE-UUN" target="_blank"><g class="sys" data-name="BE-UUN" data-const="RJ-1R7" data-sec="-0.12" data-owner="Fraternity." data-tda="MAJ2+MIN2" data-pa="N/A" data-min=""><title>BE-UUN (RJ-1R7) sec -0.12
+Sov: Fraternity.
+Threat Detection: MAJ2+MIN2
+Prospecting: N/A</title><rect x="927.0" y="1326.0" width="100" height="46" rx="7" fill="#2a78d6" stroke="#ffffff" stroke-width="2"/><rect x="934.0" y="1328.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="977.0" y="1343.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#ffffff">BE-UUN</text><text x="977.0" y="1355.0" font-size="10" text-anchor="middle" fill="#ffffff">-0.12 · MAJ2 + MIN2</text></g></a>
+<a href="https://evemaps.dotlan.net/system/BWF-ZZ" target="_blank"><g class="sys" data-name="BWF-ZZ" data-const="IPS-QB" data-sec="-0.58" data-owner="Fraternity." data-tda="MAJ2" data-pa="N/A" data-min=""><title>BWF-ZZ (IPS-QB) sec -0.58
+Sov: Fraternity.
+Threat Detection: MAJ2
+Prospecting: N/A</title><rect x="1007.0" y="656.0" width="100" height="46" rx="7" fill="#2a78d6" stroke="#ffffff" stroke-width="2"/><rect x="1014.0" y="658.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="1057.0" y="673.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#ffffff">BWF-ZZ</text><text x="1057.0" y="685.0" font-size="10" text-anchor="middle" fill="#ffffff">-0.58 · MAJ2</text></g></a>
+<a href="https://evemaps.dotlan.net/system/OEY-OR" target="_blank"><g class="sys" data-name="OEY-OR" data-const="N-K4Q0" data-sec="-0.35" data-owner="The Society of Conscious Thought" data-tda="" data-pa="N/A" data-min=""><title>OEY-OR (N-K4Q0) sec -0.35
+Sov: The Society of Conscious Thought
+Threat Detection: -
+Prospecting: N/A</title><rect x="1057.0" y="136.0" width="100" height="46" rx="7" fill="#cfcfcb" stroke="#c0504d" stroke-width="2" stroke-dasharray="5,3"/><rect x="1064.0" y="138.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="1107.0" y="153.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#0b0b0b">OEY-OR</text><text x="1107.0" y="165.0" font-size="10" text-anchor="middle" fill="#0b0b0b">-0.35 · The Societ…</text></g></a>
+<a href="https://evemaps.dotlan.net/system/4-CUM5" target="_blank"><g class="sys" data-name="4-CUM5" data-const="IPS-QB" data-sec="-0.49" data-owner="Fraternity." data-tda="MAJ3" data-pa="N/A" data-min=""><title>4-CUM5 (IPS-QB) sec -0.49
+Sov: Fraternity.
+Threat Detection: MAJ3
+Prospecting: N/A</title><rect x="1087.0" y="466.0" width="100" height="46" rx="7" fill="#0d366b" stroke="#ffffff" stroke-width="2"/><rect x="1094.0" y="468.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="1137.0" y="483.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#ffffff">4-CUM5</text><text x="1137.0" y="495.0" font-size="10" text-anchor="middle" fill="#ffffff">-0.49 · MAJ3</text></g></a>
+<a href="https://evemaps.dotlan.net/system/RLSI-V" target="_blank"><g class="sys" data-name="RLSI-V" data-const="IPS-QB" data-sec="-0.53" data-owner="Fraternity." data-tda="MAJ3" data-pa="N/A" data-min=""><title>RLSI-V (IPS-QB) sec -0.53
+Sov: Fraternity.
+Threat Detection: MAJ3
+Prospecting: N/A</title><rect x="1087.0" y="566.0" width="100" height="46" rx="7" fill="#0d366b" stroke="#ffffff" stroke-width="2"/><rect x="1094.0" y="568.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="1137.0" y="583.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#ffffff">RLSI-V</text><text x="1137.0" y="595.0" font-size="10" text-anchor="middle" fill="#ffffff">-0.53 · MAJ3</text></g></a>
+<a href="https://evemaps.dotlan.net/system/O2O-2X" target="_blank"><g class="sys" data-name="O2O-2X" data-const="74IL-O" data-sec="-0.43" data-owner="Goonswarm Federation" data-tda="" data-pa="N/A" data-min=""><title>O2O-2X (74IL-O) sec -0.43
+Sov: Goonswarm Federation
+Threat Detection: -
+Prospecting: N/A</title><rect x="1087.0" y="956.0" width="100" height="46" rx="7" fill="#cfcfcb" stroke="#c0504d" stroke-width="2" stroke-dasharray="5,3"/><rect x="1094.0" y="958.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="1137.0" y="973.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#0b0b0b">O2O-2X</text><text x="1137.0" y="985.0" font-size="10" text-anchor="middle" fill="#0b0b0b">-0.43 · Goonswarm…</text></g></a>
+<a href="https://evemaps.dotlan.net/system/5F-YRA" target="_blank"><g class="sys" data-name="5F-YRA" data-const="74IL-O" data-sec="-0.43" data-owner="Goonswarm Federation" data-tda="" data-pa="N/A" data-min=""><title>5F-YRA (74IL-O) sec -0.43
+Sov: Goonswarm Federation
+Threat Detection: -
+Prospecting: N/A</title><rect x="1087.0" y="1046.0" width="100" height="46" rx="7" fill="#cfcfcb" stroke="#c0504d" stroke-width="2" stroke-dasharray="5,3"/><rect x="1094.0" y="1048.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="1137.0" y="1063.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#0b0b0b">5F-YRA</text><text x="1137.0" y="1075.0" font-size="10" text-anchor="middle" fill="#0b0b0b">-0.43 · Goonswarm…</text></g></a>
+<a href="https://evemaps.dotlan.net/system/TDE4-H" target="_blank"><g class="sys" data-name="TDE4-H" data-const="74IL-O" data-sec="-0.58" data-owner="Goonswarm Federation" data-tda="" data-pa="N/A" data-min=""><title>TDE4-H (74IL-O) sec -0.58
+Sov: Goonswarm Federation
+Threat Detection: -
+Prospecting: N/A</title><rect x="1087.0" y="1136.0" width="100" height="46" rx="7" fill="#cfcfcb" stroke="#c0504d" stroke-width="2" stroke-dasharray="5,3"/><rect x="1094.0" y="1138.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="1137.0" y="1153.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#0b0b0b">TDE4-H</text><text x="1137.0" y="1165.0" font-size="10" text-anchor="middle" fill="#0b0b0b">-0.58 · Goonswarm…</text></g></a>
+<a href="https://evemaps.dotlan.net/system/UER-TH" target="_blank"><g class="sys" data-name="UER-TH" data-const="74IL-O" data-sec="-0.73" data-owner="Goonswarm Federation" data-tda="" data-pa="N/A" data-min=""><title>UER-TH (74IL-O) sec -0.73
+Sov: Goonswarm Federation
+Threat Detection: -
+Prospecting: N/A</title><rect x="1087.0" y="1226.0" width="100" height="46" rx="7" fill="#cfcfcb" stroke="#c0504d" stroke-width="2" stroke-dasharray="5,3"/><rect x="1094.0" y="1228.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="1137.0" y="1243.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#0b0b0b">UER-TH</text><text x="1137.0" y="1255.0" font-size="10" text-anchor="middle" fill="#0b0b0b">-0.73 · Goonswarm…</text></g></a>
+<a href="https://evemaps.dotlan.net/system/UG-UWZ" target="_blank"><g class="sys" data-name="UG-UWZ" data-const="74IL-O" data-sec="-0.96" data-owner="Goonswarm Federation" data-tda="" data-pa="N/A" data-min=""><title>UG-UWZ (74IL-O) sec -0.96
+Sov: Goonswarm Federation
+Threat Detection: -
+Prospecting: N/A</title><rect x="1087.0" y="1316.0" width="100" height="46" rx="7" fill="#cfcfcb" stroke="#c0504d" stroke-width="2" stroke-dasharray="5,3"/><rect x="1094.0" y="1318.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="1137.0" y="1333.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#0b0b0b">UG-UWZ</text><text x="1137.0" y="1345.0" font-size="10" text-anchor="middle" fill="#0b0b0b">-0.96 · Goonswarm…</text></g></a>
+<a href="https://evemaps.dotlan.net/system/JE1-36" target="_blank"><g class="sys" data-name="JE1-36" data-const="74IL-O" data-sec="-0.52" data-owner="Goonswarm Federation" data-tda="" data-pa="N/A" data-min=""><title>JE1-36 (74IL-O) sec -0.52
+Sov: Goonswarm Federation
+Threat Detection: -
+Prospecting: N/A</title><rect x="1227.0" y="956.0" width="100" height="46" rx="7" fill="#cfcfcb" stroke="#c0504d" stroke-width="2" stroke-dasharray="5,3"/><rect x="1234.0" y="958.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="1277.0" y="973.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#0b0b0b">JE1-36</text><text x="1277.0" y="985.0" font-size="10" text-anchor="middle" fill="#0b0b0b">-0.52 · Goonswarm…</text></g></a>
+<a href="https://evemaps.dotlan.net/system/SV-K8J" target="_blank"><g class="sys" data-name="SV-K8J" data-const="8K-CHA" data-sec="-0.35" data-owner="Fraternity." data-tda="MAJ3+MIN3" data-pa="N/A" data-min=""><title>SV-K8J (8K-CHA) sec -0.35
+Sov: Fraternity.
+Threat Detection: MAJ3+MIN3
+Prospecting: N/A</title><rect x="1247.0" y="66.0" width="100" height="46" rx="7" fill="#0d366b" stroke="#ffffff" stroke-width="2"/><rect x="1254.0" y="68.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="1297.0" y="83.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#ffffff">SV-K8J</text><text x="1297.0" y="95.0" font-size="10" text-anchor="middle" fill="#ffffff">-0.35 · MAJ3 + MIN3</text></g></a>
+<a href="https://evemaps.dotlan.net/system/39-DGG" target="_blank"><g class="sys" data-name="39-DGG" data-const="8K-CHA" data-sec="-0.36" data-owner="Fraternity." data-tda="MAJ3+MIN2" data-pa="N/A" data-min=""><title>39-DGG (8K-CHA) sec -0.36
+Sov: Fraternity.
+Threat Detection: MAJ3+MIN2
+Prospecting: N/A</title><rect x="1247.0" y="136.0" width="100" height="46" rx="7" fill="#0d366b" stroke="#ffffff" stroke-width="2"/><rect x="1254.0" y="138.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="1297.0" y="153.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#ffffff">39-DGG</text><text x="1297.0" y="165.0" font-size="10" text-anchor="middle" fill="#ffffff">-0.36 · MAJ3 + MIN2</text></g></a>
+<a href="https://evemaps.dotlan.net/system/6YC-TU" target="_blank"><g class="sys" data-name="6YC-TU" data-const="NK-AOZ" data-sec="-0.37" data-owner="Goonswarm Federation" data-tda="" data-pa="N/A" data-min=""><title>6YC-TU (NK-AOZ) sec -0.37
+Sov: Goonswarm Federation
+Threat Detection: -
+Prospecting: N/A</title><rect x="1267.0" y="786.0" width="100" height="46" rx="7" fill="#cfcfcb" stroke="#c0504d" stroke-width="2" stroke-dasharray="5,3"/><rect x="1274.0" y="788.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="1317.0" y="803.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#0b0b0b">6YC-TU</text><text x="1317.0" y="815.0" font-size="10" text-anchor="middle" fill="#0b0b0b">-0.37 · Goonswarm…</text></g></a>
+<a href="https://evemaps.dotlan.net/system/3SFU-S" target="_blank"><g class="sys" data-name="3SFU-S" data-const="KR-XF4" data-sec="-0.07" data-owner="Goonswarm Federation" data-tda="" data-pa="N/A" data-min=""><title>3SFU-S (KR-XF4) sec -0.07
+Sov: Goonswarm Federation
+Threat Detection: -
+Prospecting: N/A</title><rect x="1277.0" y="1196.0" width="100" height="46" rx="7" fill="#cfcfcb" stroke="#c0504d" stroke-width="2" stroke-dasharray="5,3"/><rect x="1284.0" y="1198.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="1327.0" y="1213.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#0b0b0b">3SFU-S</text><text x="1327.0" y="1225.0" font-size="10" text-anchor="middle" fill="#0b0b0b">-0.07 · Goonswarm…</text></g></a>
+<a href="https://evemaps.dotlan.net/system/RFGW-V" target="_blank"><g class="sys" data-name="RFGW-V" data-const="KR-XF4" data-sec="-0.08" data-owner="Goonswarm Federation" data-tda="" data-pa="N/A" data-min=""><title>RFGW-V (KR-XF4) sec -0.08
+Sov: Goonswarm Federation
+Threat Detection: -
+Prospecting: N/A</title><rect x="1277.0" y="1306.0" width="100" height="46" rx="7" fill="#cfcfcb" stroke="#c0504d" stroke-width="2" stroke-dasharray="5,3"/><rect x="1284.0" y="1308.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="1327.0" y="1323.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#0b0b0b">RFGW-V</text><text x="1327.0" y="1335.0" font-size="10" text-anchor="middle" fill="#0b0b0b">-0.08 · Goonswarm…</text></g></a>
+<a href="https://evemaps.dotlan.net/system/6L78-1" target="_blank"><g class="sys" data-name="6L78-1" data-const="NK-AOZ" data-sec="-0.40" data-owner="Goonswarm Federation" data-tda="" data-pa="N/A" data-min=""><title>6L78-1 (NK-AOZ) sec -0.40
+Sov: Goonswarm Federation
+Threat Detection: -
+Prospecting: N/A</title><rect x="1307.0" y="666.0" width="100" height="46" rx="7" fill="#cfcfcb" stroke="#c0504d" stroke-width="2" stroke-dasharray="5,3"/><rect x="1314.0" y="668.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="1357.0" y="683.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#0b0b0b">6L78-1</text><text x="1357.0" y="695.0" font-size="10" text-anchor="middle" fill="#0b0b0b">-0.40 · Goonswarm…</text></g></a>
+<a href="https://evemaps.dotlan.net/system/8-KZXQ" target="_blank"><g class="sys" data-name="8-KZXQ" data-const="KR-XF4" data-sec="-0.17" data-owner="Goonswarm Federation" data-tda="" data-pa="N/A" data-min=""><title>8-KZXQ (KR-XF4) sec -0.17
+Sov: Goonswarm Federation
+Threat Detection: -
+Prospecting: N/A</title><rect x="1347.0" y="1086.0" width="100" height="46" rx="7" fill="#cfcfcb" stroke="#c0504d" stroke-width="2" stroke-dasharray="5,3"/><rect x="1354.0" y="1088.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="1397.0" y="1103.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#0b0b0b">8-KZXQ</text><text x="1397.0" y="1115.0" font-size="10" text-anchor="middle" fill="#0b0b0b">-0.17 · Goonswarm…</text></g></a>
+<a href="https://evemaps.dotlan.net/system/N-HK93" target="_blank"><g class="sys" data-name="N-HK93" data-const="KR-XF4" data-sec="-0.21" data-owner="Goonswarm Federation" data-tda="" data-pa="N/A" data-min=""><title>N-HK93 (KR-XF4) sec -0.21
+Sov: Goonswarm Federation
+Threat Detection: -
+Prospecting: N/A</title><rect x="1357.0" y="1406.0" width="100" height="46" rx="7" fill="#cfcfcb" stroke="#c0504d" stroke-width="2" stroke-dasharray="5,3"/><rect x="1364.0" y="1408.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="1407.0" y="1423.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#0b0b0b">N-HK93</text><text x="1407.0" y="1435.0" font-size="10" text-anchor="middle" fill="#0b0b0b">-0.21 · Goonswarm…</text></g></a>
+<a href="https://evemaps.dotlan.net/system/6RQ9-A" target="_blank"><g class="sys" data-name="6RQ9-A" data-const="8K-CHA" data-sec="-0.40" data-owner="Fraternity." data-tda="MAJ3+MIN3" data-pa="N/A" data-min=""><title>6RQ9-A (8K-CHA) sec -0.40
+Sov: Fraternity.
+Threat Detection: MAJ3+MIN3
+Prospecting: N/A</title><rect x="1377.0" y="146.0" width="100" height="46" rx="7" fill="#0d366b" stroke="#ffffff" stroke-width="2"/><rect x="1384.0" y="148.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="1427.0" y="163.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#ffffff">6RQ9-A</text><text x="1427.0" y="175.0" font-size="10" text-anchor="middle" fill="#ffffff">-0.40 · MAJ3 + MIN3</text></g></a>
+<a href="https://evemaps.dotlan.net/system/K42-IE" target="_blank"><g class="sys" data-name="K42-IE" data-const="8K-CHA" data-sec="-0.45" data-owner="Fraternity." data-tda="MAJ3+MIN3" data-pa="N/A" data-min=""><title>K42-IE (8K-CHA) sec -0.45
+Sov: Fraternity.
+Threat Detection: MAJ3+MIN3
+Prospecting: N/A</title><rect x="1387.0" y="226.0" width="100" height="46" rx="7" fill="#0d366b" stroke="#ffffff" stroke-width="2"/><rect x="1394.0" y="228.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="1437.0" y="243.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#ffffff">K42-IE</text><text x="1437.0" y="255.0" font-size="10" text-anchor="middle" fill="#ffffff">-0.45 · MAJ3 + MIN3</text></g></a>
+<a href="https://evemaps.dotlan.net/system/O-VWPB" target="_blank"><g class="sys" data-name="O-VWPB" data-const="NK-AOZ" data-sec="-0.41" data-owner="Goonswarm Federation" data-tda="" data-pa="N/A" data-min=""><title>O-VWPB (NK-AOZ) sec -0.41
+Sov: Goonswarm Federation
+Threat Detection: -
+Prospecting: N/A</title><rect x="1407.0" y="496.0" width="100" height="46" rx="7" fill="#cfcfcb" stroke="#c0504d" stroke-width="2" stroke-dasharray="5,3"/><rect x="1414.0" y="498.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="1457.0" y="513.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#0b0b0b">O-VWPB</text><text x="1457.0" y="525.0" font-size="10" text-anchor="middle" fill="#0b0b0b">-0.41 · Goonswarm…</text></g></a>
+<a href="https://evemaps.dotlan.net/system/Y8R-XZ" target="_blank"><g class="sys" data-name="Y8R-XZ" data-const="NK-AOZ" data-sec="-0.52" data-owner="Goonswarm Federation" data-tda="" data-pa="N/A" data-min=""><title>Y8R-XZ (NK-AOZ) sec -0.52
+Sov: Goonswarm Federation
+Threat Detection: -
+Prospecting: N/A</title><rect x="1467.0" y="736.0" width="100" height="46" rx="7" fill="#cfcfcb" stroke="#c0504d" stroke-width="2" stroke-dasharray="5,3"/><rect x="1474.0" y="738.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="1517.0" y="753.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#0b0b0b">Y8R-XZ</text><text x="1517.0" y="765.0" font-size="10" text-anchor="middle" fill="#0b0b0b">-0.52 · Goonswarm…</text></g></a>
+<a href="https://evemaps.dotlan.net/system/U-L4KS" target="_blank"><g class="sys" data-name="U-L4KS" data-const="NK-AOZ" data-sec="-0.48" data-owner="Goonswarm Federation" data-tda="" data-pa="N/A" data-min=""><title>U-L4KS (NK-AOZ) sec -0.48
+Sov: Goonswarm Federation
+Threat Detection: -
+Prospecting: N/A</title><rect x="1467.0" y="826.0" width="100" height="46" rx="7" fill="#cfcfcb" stroke="#c0504d" stroke-width="2" stroke-dasharray="5,3"/><rect x="1474.0" y="828.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="1517.0" y="843.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#0b0b0b">U-L4KS</text><text x="1517.0" y="855.0" font-size="10" text-anchor="middle" fill="#0b0b0b">-0.48 · Goonswarm…</text></g></a>
+<a href="https://evemaps.dotlan.net/system/4VY-Y1" target="_blank"><g class="sys" data-name="4VY-Y1" data-const="NK-AOZ" data-sec="-0.37" data-owner="Goonswarm Federation" data-tda="" data-pa="N/A" data-min=""><title>4VY-Y1 (NK-AOZ) sec -0.37
+Sov: Goonswarm Federation
+Threat Detection: -
+Prospecting: N/A</title><rect x="1477.0" y="596.0" width="100" height="46" rx="7" fill="#cfcfcb" stroke="#c0504d" stroke-width="2" stroke-dasharray="5,3"/><rect x="1484.0" y="598.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="1527.0" y="613.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#0b0b0b">4VY-Y1</text><text x="1527.0" y="625.0" font-size="10" text-anchor="middle" fill="#0b0b0b">-0.37 · Goonswarm…</text></g></a>
+<a href="https://evemaps.dotlan.net/system/P-6I0B" target="_blank"><g class="sys" data-name="P-6I0B" data-const="KR-XF4" data-sec="-0.37" data-owner="Goonswarm Federation" data-tda="" data-pa="N/A" data-min=""><title>P-6I0B (KR-XF4) sec -0.37
+Sov: Goonswarm Federation
+Threat Detection: -
+Prospecting: N/A</title><rect x="1477.0" y="1176.0" width="100" height="46" rx="7" fill="#cfcfcb" stroke="#c0504d" stroke-width="2" stroke-dasharray="5,3"/><rect x="1484.0" y="1178.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="1527.0" y="1193.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#0b0b0b">P-6I0B</text><text x="1527.0" y="1205.0" font-size="10" text-anchor="middle" fill="#0b0b0b">-0.37 · Goonswarm…</text></g></a>
+<a href="https://evemaps.dotlan.net/system/CFYY-J" target="_blank"><g class="sys" data-name="CFYY-J" data-const="KR-XF4" data-sec="-0.21" data-owner="Goonswarm Federation" data-tda="" data-pa="N/A" data-min=""><title>CFYY-J (KR-XF4) sec -0.21
+Sov: Goonswarm Federation
+Threat Detection: -
+Prospecting: N/A</title><rect x="1487.0" y="1326.0" width="100" height="46" rx="7" fill="#cfcfcb" stroke="#c0504d" stroke-width="2" stroke-dasharray="5,3"/><rect x="1494.0" y="1328.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="1537.0" y="1343.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#0b0b0b">CFYY-J</text><text x="1537.0" y="1355.0" font-size="10" text-anchor="middle" fill="#0b0b0b">-0.21 · Goonswarm…</text></g></a>
+<a href="https://evemaps.dotlan.net/system/HKYW-T" target="_blank"><g class="sys" data-name="HKYW-T" data-const="KR-XF4" data-sec="-0.05" data-owner="Goonswarm Federation" data-tda="" data-pa="N/A" data-min=""><title>HKYW-T (KR-XF4) sec -0.05
+Sov: Goonswarm Federation
+Threat Detection: -
+Prospecting: N/A</title><rect x="1487.0" y="1456.0" width="100" height="46" rx="7" fill="#cfcfcb" stroke="#c0504d" stroke-width="2" stroke-dasharray="5,3"/><rect x="1494.0" y="1458.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="1537.0" y="1473.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#0b0b0b">HKYW-T</text><text x="1537.0" y="1485.0" font-size="10" text-anchor="middle" fill="#0b0b0b">-0.05 · Goonswarm…</text></g></a>
+<a href="https://evemaps.dotlan.net/system/3USX-F" target="_blank"><g class="sys" data-name="3USX-F" data-const="8K-CHA" data-sec="-0.34" data-owner="Fraternity." data-tda="MAJ3" data-pa="N/A" data-min=""><title>3USX-F (8K-CHA) sec -0.34
+Sov: Fraternity.
+Threat Detection: MAJ3
+Prospecting: N/A</title><rect x="1507.0" y="146.0" width="100" height="46" rx="7" fill="#0d366b" stroke="#ffffff" stroke-width="2"/><rect x="1514.0" y="148.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="1557.0" y="163.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#ffffff">3USX-F</text><text x="1557.0" y="175.0" font-size="10" text-anchor="middle" fill="#ffffff">-0.34 · MAJ3</text></g></a>
+<a href="https://evemaps.dotlan.net/system/VSJ-PP" target="_blank"><g class="sys" data-name="VSJ-PP" data-const="8K-CHA" data-sec="-0.39" data-owner="Fraternity." data-tda="MAJ3" data-pa="N/A" data-min=""><title>VSJ-PP (8K-CHA) sec -0.39
+Sov: Fraternity.
+Threat Detection: MAJ3
+Prospecting: N/A</title><rect x="1517.0" y="306.0" width="100" height="46" rx="7" fill="#0d366b" stroke="#ffffff" stroke-width="2"/><rect x="1524.0" y="308.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="1567.0" y="323.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#ffffff">VSJ-PP</text><text x="1567.0" y="335.0" font-size="10" text-anchor="middle" fill="#ffffff">-0.39 · MAJ3</text></g></a>
+<a href="https://evemaps.dotlan.net/system/D-I9HJ" target="_blank"><g class="sys" data-name="D-I9HJ" data-const="KR-XF4" data-sec="-0.31" data-owner="Goonswarm Federation" data-tda="" data-pa="N/A" data-min=""><title>D-I9HJ (KR-XF4) sec -0.31
+Sov: Goonswarm Federation
+Threat Detection: -
+Prospecting: N/A</title><rect x="1527.0" y="1036.0" width="100" height="46" rx="7" fill="#cfcfcb" stroke="#c0504d" stroke-width="2" stroke-dasharray="5,3"/><rect x="1534.0" y="1038.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="1577.0" y="1053.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#0b0b0b">D-I9HJ</text><text x="1577.0" y="1065.0" font-size="10" text-anchor="middle" fill="#0b0b0b">-0.31 · Goonswarm…</text></g></a>
+<a href="https://evemaps.dotlan.net/system/LX-ZOJ" target="_blank"><g class="sys" data-name="LX-ZOJ" data-const="NK-AOZ" data-sec="-0.45" data-owner="Goonswarm Federation" data-tda="" data-pa="N/A" data-min=""><title>LX-ZOJ (NK-AOZ) sec -0.45
+Sov: Goonswarm Federation
+Threat Detection: -
+Prospecting: N/A</title><rect x="1547.0" y="496.0" width="100" height="46" rx="7" fill="#cfcfcb" stroke="#c0504d" stroke-width="2" stroke-dasharray="5,3"/><rect x="1554.0" y="498.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="1597.0" y="513.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#0b0b0b">LX-ZOJ</text><text x="1597.0" y="525.0" font-size="10" text-anchor="middle" fill="#0b0b0b">-0.45 · Goonswarm…</text></g></a>
+<a href="https://evemaps.dotlan.net/system/04-LQM" target="_blank"><g class="sys" data-name="04-LQM" data-const="NK-AOZ" data-sec="-0.64" data-owner="Goonswarm Federation" data-tda="" data-pa="N/A" data-min=""><title>04-LQM (NK-AOZ) sec -0.64
+Sov: Goonswarm Federation
+Threat Detection: -
+Prospecting: N/A</title><rect x="1547.0" y="666.0" width="100" height="46" rx="7" fill="#cfcfcb" stroke="#c0504d" stroke-width="2" stroke-dasharray="5,3"/><rect x="1554.0" y="668.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="1597.0" y="683.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#0b0b0b">04-LQM</text><text x="1597.0" y="695.0" font-size="10" text-anchor="middle" fill="#0b0b0b">-0.64 · Goonswarm…</text></g></a>
+<a href="https://evemaps.dotlan.net/system/VJ-NQP" target="_blank"><g class="sys" data-name="VJ-NQP" data-const="KR-XF4" data-sec="-0.03" data-owner="Goonswarm Federation" data-tda="" data-pa="N/A" data-min=""><title>VJ-NQP (KR-XF4) sec -0.03
+Sov: Goonswarm Federation
+Threat Detection: -
+Prospecting: N/A</title><rect x="1597.0" y="1386.0" width="100" height="46" rx="7" fill="#cfcfcb" stroke="#c0504d" stroke-width="2" stroke-dasharray="5,3"/><rect x="1604.0" y="1388.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="1647.0" y="1403.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#0b0b0b">VJ-NQP</text><text x="1647.0" y="1415.0" font-size="10" text-anchor="middle" fill="#0b0b0b">-0.03 · Goonswarm…</text></g></a>
+<a href="https://evemaps.dotlan.net/system/Atioth" target="_blank"><g class="sys" data-name="Atioth" data-const="KR-XF4" data-sec="-0.02" data-owner="Goonswarm Federation" data-tda="" data-pa="N/A" data-min=""><title>Atioth (KR-XF4) sec -0.02
+Sov: Goonswarm Federation
+Threat Detection: -
+Prospecting: N/A</title><rect x="1607.0" y="1136.0" width="100" height="46" rx="7" fill="#cfcfcb" stroke="#c0504d" stroke-width="2" stroke-dasharray="5,3"/><rect x="1614.0" y="1138.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="1657.0" y="1153.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#0b0b0b">Atioth</text><text x="1657.0" y="1165.0" font-size="10" text-anchor="middle" fill="#0b0b0b">-0.02 · Goonswarm…</text></g></a>
+<a href="https://evemaps.dotlan.net/system/K25-XD" target="_blank"><g class="sys" data-name="K25-XD" data-const="NK-AOZ" data-sec="-0.59" data-owner="Goonswarm Federation" data-tda="" data-pa="N/A" data-min=""><title>K25-XD (NK-AOZ) sec -0.59
+Sov: Goonswarm Federation
+Threat Detection: -
+Prospecting: N/A</title><rect x="1627.0" y="746.0" width="100" height="46" rx="7" fill="#cfcfcb" stroke="#c0504d" stroke-width="2" stroke-dasharray="5,3"/><rect x="1634.0" y="748.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="1677.0" y="763.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#0b0b0b">K25-XD</text><text x="1677.0" y="775.0" font-size="10" text-anchor="middle" fill="#0b0b0b">-0.59 · Goonswarm…</text></g></a>
+<a href="https://evemaps.dotlan.net/system/U6D-9A" target="_blank"><g class="sys" data-name="U6D-9A" data-const="KR-XF4" data-sec="-0.03" data-owner="Goonswarm Federation" data-tda="" data-pa="N/A" data-min=""><title>U6D-9A (KR-XF4) sec -0.03
+Sov: Goonswarm Federation
+Threat Detection: -
+Prospecting: N/A</title><rect x="1627.0" y="1266.0" width="100" height="46" rx="7" fill="#cfcfcb" stroke="#c0504d" stroke-width="2" stroke-dasharray="5,3"/><rect x="1634.0" y="1268.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="1677.0" y="1283.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#0b0b0b">U6D-9A</text><text x="1677.0" y="1295.0" font-size="10" text-anchor="middle" fill="#0b0b0b">-0.03 · Goonswarm…</text></g></a>
+<a href="https://evemaps.dotlan.net/system/9-KWXC" target="_blank"><g class="sys" data-name="9-KWXC" data-const="8K-CHA" data-sec="-0.33" data-owner="Fraternity." data-tda="MAJ3" data-pa="N/A" data-min=""><title>9-KWXC (8K-CHA) sec -0.33
+Sov: Fraternity.
+Threat Detection: MAJ3
+Prospecting: N/A</title><rect x="1647.0" y="146.0" width="100" height="46" rx="7" fill="#0d366b" stroke="#ffffff" stroke-width="2"/><rect x="1654.0" y="148.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="1697.0" y="163.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#ffffff">9-KWXC</text><text x="1697.0" y="175.0" font-size="10" text-anchor="middle" fill="#ffffff">-0.33 · MAJ3</text></g></a>
+<a href="https://evemaps.dotlan.net/system/LU-HQS" target="_blank"><g class="sys" data-name="LU-HQS" data-const="NK-AOZ" data-sec="-0.42" data-owner="Goonswarm Federation" data-tda="" data-pa="N/A" data-min=""><title>LU-HQS (NK-AOZ) sec -0.42
+Sov: Goonswarm Federation
+Threat Detection: -
+Prospecting: N/A</title><rect x="1677.0" y="596.0" width="100" height="46" rx="7" fill="#cfcfcb" stroke="#c0504d" stroke-width="2" stroke-dasharray="5,3"/><rect x="1684.0" y="598.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="1727.0" y="613.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#0b0b0b">LU-HQS</text><text x="1727.0" y="625.0" font-size="10" text-anchor="middle" fill="#0b0b0b">-0.42 · Goonswarm…</text></g></a>
+<a href="https://evemaps.dotlan.net/system/PYY3-5" target="_blank"><g class="sys" data-name="PYY3-5" data-const="KR-XF4" data-sec="-0.24" data-owner="Goonswarm Federation" data-tda="" data-pa="N/A" data-min=""><title>PYY3-5 (KR-XF4) sec -0.24
+Sov: Goonswarm Federation
+Threat Detection: -
+Prospecting: N/A</title><rect x="1677.0" y="966.0" width="100" height="46" rx="7" fill="#cfcfcb" stroke="#c0504d" stroke-width="2" stroke-dasharray="5,3"/><rect x="1684.0" y="968.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="1727.0" y="983.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#0b0b0b">PYY3-5</text><text x="1727.0" y="995.0" font-size="10" text-anchor="middle" fill="#0b0b0b">-0.24 · Goonswarm…</text></g></a>
+<a href="https://evemaps.dotlan.net/system/HJO-84" target="_blank"><g class="sys" data-name="HJO-84" data-const="V1G-63" data-sec="-0.35" data-owner="Fraternity." data-tda="MAJ3" data-pa="N/A" data-min=""><title>HJO-84 (V1G-63) sec -0.35
+Sov: Fraternity.
+Threat Detection: MAJ3
+Prospecting: N/A</title><rect x="1747.0" y="286.0" width="100" height="46" rx="7" fill="#0d366b" stroke="#ffffff" stroke-width="2"/><rect x="1754.0" y="288.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="1797.0" y="303.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#ffffff">HJO-84</text><text x="1797.0" y="315.0" font-size="10" text-anchor="middle" fill="#ffffff">-0.35 · MAJ3</text></g></a>
+<a href="https://evemaps.dotlan.net/system/P-E9GN" target="_blank"><g class="sys" data-name="P-E9GN" data-const="V1G-63" data-sec="-0.39" data-owner="Fraternity." data-tda="MAJ3" data-pa="N/A" data-min=""><title>P-E9GN (V1G-63) sec -0.39
+Sov: Fraternity.
+Threat Detection: MAJ3
+Prospecting: N/A</title><rect x="1817.0" y="186.0" width="100" height="46" rx="7" fill="#0d366b" stroke="#ffffff" stroke-width="2"/><rect x="1824.0" y="188.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="1867.0" y="203.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#ffffff">P-E9GN</text><text x="1867.0" y="215.0" font-size="10" text-anchor="middle" fill="#ffffff">-0.39 · MAJ3</text></g></a>
+<a href="https://evemaps.dotlan.net/system/4D9-66" target="_blank"><g class="sys" data-name="4D9-66" data-const="V1G-63" data-sec="-0.42" data-owner="Fraternity." data-tda="MAJ2" data-pa="N/A" data-min=""><title>4D9-66 (V1G-63) sec -0.42
+Sov: Fraternity.
+Threat Detection: MAJ2
+Prospecting: N/A</title><rect x="1827.0" y="356.0" width="100" height="46" rx="7" fill="#2a78d6" stroke="#ffffff" stroke-width="2"/><rect x="1834.0" y="358.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="1877.0" y="373.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#ffffff">4D9-66</text><text x="1877.0" y="385.0" font-size="10" text-anchor="middle" fill="#ffffff">-0.42 · MAJ2</text></g></a>
+<a href="https://evemaps.dotlan.net/system/L-TOFR" target="_blank"><g class="sys" data-name="L-TOFR" data-const="V1G-63" data-sec="-0.73" data-owner="Fraternity." data-tda="MAJ3" data-pa="N/A" data-min=""><title>L-TOFR (V1G-63) sec -0.73
+Sov: Fraternity.
+Threat Detection: MAJ3
+Prospecting: N/A</title><rect x="1907.0" y="256.0" width="100" height="46" rx="7" fill="#0d366b" stroke="#ffffff" stroke-width="2"/><rect x="1914.0" y="258.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="1957.0" y="273.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#ffffff">L-TOFR</text><text x="1957.0" y="285.0" font-size="10" text-anchor="middle" fill="#ffffff">-0.73 · MAJ3</text></g></a>
+<a href="https://evemaps.dotlan.net/system/Q-TBHW" target="_blank"><g class="sys" data-name="Q-TBHW" data-const="V1G-63" data-sec="-0.78" data-owner="Fraternity." data-tda="MAJ3+MIN3" data-pa="N/A" data-min=""><title>Q-TBHW (V1G-63) sec -0.78
+Sov: Fraternity.
+Threat Detection: MAJ3+MIN3
+Prospecting: N/A</title><rect x="1957.0" y="376.0" width="100" height="46" rx="7" fill="#0d366b" stroke="#ffffff" stroke-width="2"/><rect x="1964.0" y="378.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="2007.0" y="393.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#ffffff">Q-TBHW</text><text x="2007.0" y="405.0" font-size="10" text-anchor="middle" fill="#ffffff">-0.78 · MAJ3 + MIN3</text></g></a>
+<a href="https://evemaps.dotlan.net/system/9P4O-F" target="_blank"><g class="sys" data-name="9P4O-F" data-const="V1G-63" data-sec="-1.00" data-owner="Fraternity." data-tda="MAJ3" data-pa="N/A" data-min=""><title>9P4O-F (V1G-63) sec -1.00
+Sov: Fraternity.
+Threat Detection: MAJ3
+Prospecting: N/A</title><rect x="1977.0" y="486.0" width="100" height="46" rx="7" fill="#0d366b" stroke="#ffffff" stroke-width="2"/><rect x="1984.0" y="488.0" width="86" height="3" rx="1.5" fill="#F00000"/><text x="2027.0" y="503.0" font-size="12.5" font-weight="700" text-anchor="middle" fill="#ffffff">9P4O-F</text><text x="2027.0" y="515.0" font-size="10" text-anchor="middle" fill="#ffffff">-1.00 · MAJ3</text></g></a>
+<a href="https://evemaps.dotlan.net/system/Akkio" target="_blank"><g class="sys ext"><title>Akkio (The Forge)</title><rect x="77.0" y="952.0" width="100" height="34" rx="6" fill="#e6e5e1" stroke="#8a8984" stroke-dasharray="4,3"/><text x="127.0" y="968.0" font-size="12" text-anchor="middle" fill="#3b3a37">Akkio</text><text x="127.0" y="980.0" font-size="9.5" font-weight="700" text-anchor="middle" fill="#52514e">The Forge</text></g></a>
+<a href="https://evemaps.dotlan.net/system/1W-0KS" target="_blank"><g class="sys ext"><title>1W-0KS (Vale of the Silent)</title><rect x="87.0" y="1432.0" width="100" height="34" rx="6" fill="#e6e5e1" stroke="#8a8984" stroke-dasharray="4,3"/><text x="137.0" y="1448.0" font-size="12" text-anchor="middle" fill="#3b3a37">1W-0KS</text><text x="137.0" y="1460.0" font-size="9.5" font-weight="700" text-anchor="middle" fill="#52514e">Vale of the Silent</text></g></a>
+<a href="https://evemaps.dotlan.net/system/Eurgrana" target="_blank"><g class="sys ext"><title>Eurgrana (Metropolis)</title><rect x="567.0" y="952.0" width="100" height="34" rx="6" fill="#e6e5e1" stroke="#8a8984" stroke-dasharray="4,3"/><text x="617.0" y="968.0" font-size="12" text-anchor="middle" fill="#3b3a37">Eurgrana</text><text x="617.0" y="980.0" font-size="9.5" font-weight="700" text-anchor="middle" fill="#52514e">Metropolis</text></g></a>
+<a href="https://evemaps.dotlan.net/system/H-5GUI" target="_blank"><g class="sys ext"><title>H-5GUI (Vale of the Silent)</title><rect x="727.0" y="262.0" width="100" height="34" rx="6" fill="#e6e5e1" stroke="#8a8984" stroke-dasharray="4,3"/><text x="777.0" y="278.0" font-size="12" text-anchor="middle" fill="#3b3a37">H-5GUI</text><text x="777.0" y="290.0" font-size="9.5" font-weight="700" text-anchor="middle" fill="#52514e">Vale of the Silent</text></g></a>
+<a href="https://evemaps.dotlan.net/system/Oijanen" target="_blank"><g class="sys ext"><title>Oijanen (The Forge)</title><rect x="1007.0" y="752.0" width="100" height="34" rx="6" fill="#e6e5e1" stroke="#8a8984" stroke-dasharray="4,3"/><text x="1057.0" y="768.0" font-size="12" text-anchor="middle" fill="#3b3a37">Oijanen</text><text x="1057.0" y="780.0" font-size="9.5" font-weight="700" text-anchor="middle" fill="#52514e">The Forge</text></g></a>
+<a href="https://evemaps.dotlan.net/system/K-IYNW" target="_blank"><g class="sys ext"><title>K-IYNW (Great Wildlands)</title><rect x="1767.0" y="1072.0" width="100" height="34" rx="6" fill="#e6e5e1" stroke="#8a8984" stroke-dasharray="4,3"/><text x="1817.0" y="1088.0" font-size="12" text-anchor="middle" fill="#3b3a37">K-IYNW</text><text x="1817.0" y="1100.0" font-size="9.5" font-weight="700" text-anchor="middle" fill="#52514e">Great Wildlands</text></g></a>
+<a href="https://evemaps.dotlan.net/system/1S-SU1" target="_blank"><g class="sys ext"><title>1S-SU1 (The Kalevala Expanse)</title><rect x="1937.0" y="632.0" width="100" height="34" rx="6" fill="#e6e5e1" stroke="#8a8984" stroke-dasharray="4,3"/><text x="1987.0" y="648.0" font-size="12" text-anchor="middle" fill="#3b3a37">1S-SU1</text><text x="1987.0" y="660.0" font-size="9.5" font-weight="700" text-anchor="middle" fill="#52514e">The Kalevala Expanse</text></g></a>
+<a href="https://evemaps.dotlan.net/system/9-GBPD" target="_blank"><g class="sys ext"><title>9-GBPD (Vale of the Silent)</title><rect x="1947.0" y="102.0" width="100" height="34" rx="6" fill="#e6e5e1" stroke="#8a8984" stroke-dasharray="4,3"/><text x="1997.0" y="118.0" font-size="12" text-anchor="middle" fill="#3b3a37">9-GBPD</text><text x="1997.0" y="130.0" font-size="9.5" font-weight="700" text-anchor="middle" fill="#52514e">Vale of the Silent</text></g></a>
+</g>
+<g class="legend"><rect x="2107" y="0" width="260" height="1532" fill="#f3f2ee"/>
+<text x="2117" y="30" font-size="20" font-weight="700" fill="#0b0b0b">Geminate</text>
+<text x="2117" y="50" font-size="11" fill="#52514e">Layout: dotlan · Daten: Google Sheet</text>
+<text x="2117" y="65" font-size="11" fill="#52514e">Version 1.0.0 · 23.09.2026</text>
+<text x="2117" y="100" font-size="13" font-weight="700" fill="#0b0b0b">Threat Detection Array (F)</text><text x="2117" y="115" font-size="10.5" fill="#52514e">Füllfarbe = MAJ-Stufe, MIN steht im Text</text>
+<rect x="2117" y="128" width="34" height="18" rx="4" fill="#86b6ef"/><text x="2161" y="141" font-size="12" fill="#0b0b0b">MAJ1  (6 Systeme)</text>
+<rect x="2117" y="152" width="34" height="18" rx="4" fill="#2a78d6"/><text x="2161" y="165" font-size="12" fill="#0b0b0b">MAJ2  (27 Systeme)</text>
+<rect x="2117" y="176" width="34" height="18" rx="4" fill="#0d366b"/><text x="2161" y="189" font-size="12" fill="#0b0b0b">MAJ3  (16 Systeme)</text>
+<rect x="2117" y="200" width="34" height="18" rx="4" fill="#cfcfcb"/><text x="2161" y="213" font-size="12" fill="#0b0b0b">ohne MAJ  (35 Systeme)</text>
+<text x="2117" y="236" font-size="13" font-weight="700" fill="#0b0b0b">Prospecting Array (H)</text>
+<circle cx="2125" cy="258" r="6" fill="#eb6834"/><text x="2139" y="262" font-size="12" fill="#0b0b0b">Mexallon (Mex)  0</text>
+<circle cx="2125" cy="278" r="6" fill="#1baf7a"/><text x="2139" y="282" font-size="12" fill="#0b0b0b">Isogen (Iso)  0</text>
+<circle cx="2125" cy="298" r="6" fill="#eda100"/><text x="2139" y="302" font-size="12" fill="#0b0b0b">Nocxium (Nocx)  0</text>
+<circle cx="2125" cy="318" r="6" fill="#e87ba4"/><text x="2139" y="322" font-size="12" fill="#0b0b0b">Zydrine (Zyd)  0</text>
+<circle cx="2125" cy="338" r="6" fill="#4a3aa7"/><text x="2139" y="342" font-size="12" fill="#0b0b0b">Megacyte (Mega)  0</text>
+<text x="2117" y="360" font-size="10.5" fill="#52514e">L2/L3 = Stufe · ohne Plakette: N/A (84)</text>
+<text x="2117" y="386" font-size="13" font-weight="700" fill="#0b0b0b">Karte</text>
+<rect x="2117" y="400" width="34" height="4" rx="2" fill="#F00000"/><text x="2161" y="406" font-size="12" fill="#0b0b0b">Balken: Security (dotlan-Farbe)</text>
+<line x1="2117" y1="425" x2="2151" y2="425" stroke="#8a8984" stroke-width="2.5"/><text x="2161" y="429" font-size="12" fill="#0b0b0b">Gate</text>
+<line x1="2117" y1="445" x2="2151" y2="445" stroke="#c0504d" stroke-width="2.5"/><text x="2161" y="449" font-size="12" fill="#0b0b0b">Gate zu anderer Konstellation</text>
+<line x1="2117" y1="465" x2="2151" y2="465" stroke="#7b5fb8" stroke-width="3" stroke-dasharray="6,4"/><text x="2161" y="469" font-size="12" fill="#0b0b0b">Gate in andere Region</text>
+<rect x="2117" y="480" width="34" height="16" rx="4" fill="#e6e5e1" stroke="#8a8984" stroke-dasharray="4,3"/><text x="2161" y="492" font-size="12" fill="#0b0b0b">Nachbarregion</text>
+<rect x="2117" y="502" width="34" height="16" rx="4" fill="#cfcfcb" stroke="#c0504d" stroke-width="2" stroke-dasharray="5,3"/><text x="2161" y="514" font-size="12" fill="#0b0b0b">nicht im Sheet</text>
+</g>
+</svg></div><div id="tip"></div>
+<script>
+const sys=[...document.querySelectorAll('.systems .sys:not(.ext)')], tip=document.getElementById('tip');
+sys.forEach(g=>{g.querySelector('title')?.remove();
+ g.addEventListener('mousemove',e=>{const d=g.dataset;tip.textContent=d.name+'  ('+d.const+')  sec '+d.sec+'\nSov: '+(d.owner||'-')+'\nThreat Detection: '+(d.tda||'-')+'\nProspecting: '+(d.pa&&d.pa!=='N/A'?d.pa:'-');
+  tip.style.display='block';tip.style.left=Math.min(e.clientX+14,innerWidth-260)+'px';tip.style.top=(e.clientY+14)+'px'});
+ g.addEventListener('mouseleave',()=>tip.style.display='none')});
+function apply(){const f=document.getElementById('f').value,q=document.getElementById('q').value.trim().toLowerCase();let n=0;
+ sys.forEach(g=>{const d=g.dataset;let ok=true;
+  if(f==='pa')ok=!!d.min;else if(f==='MAJ3')ok=d.tda.includes('MAJ3');else if(f==='MIN')ok=d.tda.includes('MIN');else if(f)ok=d.min===f;
+  if(q)ok=ok&&(d.name.toLowerCase().includes(q)||d.const.toLowerCase().includes(q));
+  g.classList.toggle('dim',!ok);if(ok)n++});
+ document.getElementById('count').textContent=n+' von '+sys.length+' Systemen'}
+document.getElementById('f').onchange=apply;document.getElementById('q').oninput=apply;apply();
+</script></body></html>
